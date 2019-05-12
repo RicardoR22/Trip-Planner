@@ -20,9 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window?.backgroundColor = .cyan
         let nav = UINavigationController()
-        
-        let layout = UICollectionViewFlowLayout()
-//        nav.viewControllers = [FeedViewController(collectionViewLayout: layout)]
+        let viewController = PlannedTripsViewController()
+        viewController.store = TripStore()
+        nav.viewControllers = [viewController]
         window!.rootViewController = nav
         window!.makeKeyAndVisible()
         return true
