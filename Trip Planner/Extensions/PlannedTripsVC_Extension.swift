@@ -29,4 +29,13 @@ extension PlannedTripsViewController: UITableViewDelegate, UITableViewDataSource
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let tripDetailVC = TripDetailsViewController()
+        tripDetailVC.store = store
+        tripDetailVC.trip = self.plannedTripsView.plannedTrips[indexPath.row]
+        
+        navigationController?.pushViewController(tripDetailVC, animated: true)
+        
+    }
 }

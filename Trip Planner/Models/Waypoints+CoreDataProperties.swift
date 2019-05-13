@@ -2,7 +2,7 @@
 //  Waypoints+CoreDataProperties.swift
 //  Trip Planner
 //
-//  Created by Ricardo Rodriguez on 5/11/19.
+//  Created by Ricardo Rodriguez on 5/12/19.
 //  Copyright © 2019 Ricardo Rodriguez. All rights reserved.
 //
 //
