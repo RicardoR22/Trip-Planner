@@ -31,7 +31,7 @@ extension AddWaypointViewController: UITableViewDelegate, UITableViewDataSource 
         
         let fields: GMSPlaceField = GMSPlaceField(rawValue: UInt(GMSPlaceField.name.rawValue) |
             UInt(GMSPlaceField.coordinate.rawValue) | UInt(GMSPlaceField.formattedAddress.rawValue))!
-        
+                
         self.addWaypointView.placesClient.fetchPlace(fromPlaceID: placeID, placeFields: fields, sessionToken: nil, callback: {
             (place: GMSPlace?, error: Error?) in
             if let error = error {

@@ -39,6 +39,7 @@ class AddWaypointViewController: UIViewController {
         addWaypointView.placePredictionTable.delegate = self
         addWaypointView.placePredictionTable.dataSource = self
         addWaypointView.searchBar.delegate = self.addWaypointView
+        
     }
     
     func setupNav() {
@@ -67,6 +68,8 @@ class AddWaypointViewController: UIViewController {
         waypoint.name = place.name
         waypoint.longitude = place.coordinate.longitude
         waypoint.latitude = place.coordinate.latitude
+        waypoint.address = place.formattedAddress
+        waypoint.placeID = place.placeID
         
         trip.addToWaypoints(waypoint)
         store.saveTrip()

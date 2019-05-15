@@ -40,6 +40,10 @@
 		8D8A9CAA228BAF510013BF3D /* AddWaypointView_Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A9CA9228BAF510013BF3D /* AddWaypointView_Constraints.swift */; };
 		8D8A9CAC228BB0420013BF3D /* AddWaypointVC_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A9CAB228BB0420013BF3D /* AddWaypointVC_Extension.swift */; };
 		8D8A9CAE228BE5520013BF3D /* TripDetailsVC_Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A9CAD228BE5520013BF3D /* TripDetailsVC_Extension.swift */; };
+		8D8A9CB0228CB3540013BF3D /* WaypointDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A9CAF228CB3540013BF3D /* WaypointDetailView.swift */; };
+		8D8A9CB2228CB4230013BF3D /* WaypointDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A9CB1228CB4230013BF3D /* WaypointDetailViewController.swift */; };
+		8D8A9CB4228CB5150013BF3D /* WaypointDetailVC_Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A9CB3228CB5150013BF3D /* WaypointDetailVC_Constraints.swift */; };
+		8D8A9CB6228CB55C0013BF3D /* WaypointDetailView_Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8A9CB5228CB55C0013BF3D /* WaypointDetailView_Constraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +97,10 @@
 		8D8A9CA9228BAF510013BF3D /* AddWaypointView_Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWaypointView_Constraints.swift; sourceTree = "<group>"; };
 		8D8A9CAB228BB0420013BF3D /* AddWaypointVC_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWaypointVC_Extension.swift; sourceTree = "<group>"; };
 		8D8A9CAD228BE5520013BF3D /* TripDetailsVC_Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripDetailsVC_Extension.swift; path = Constraints/TripDetailsVC_Extension.swift; sourceTree = "<group>"; };
+		8D8A9CAF228CB3540013BF3D /* WaypointDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointDetailView.swift; sourceTree = "<group>"; };
+		8D8A9CB1228CB4230013BF3D /* WaypointDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointDetailViewController.swift; sourceTree = "<group>"; };
+		8D8A9CB3228CB5150013BF3D /* WaypointDetailVC_Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointDetailVC_Constraints.swift; sourceTree = "<group>"; };
+		8D8A9CB5228CB55C0013BF3D /* WaypointDetailView_Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaypointDetailView_Constraints.swift; sourceTree = "<group>"; };
 		A0E6517C46F75219B407DCA7 /* Pods_Trip_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trip_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -191,6 +199,7 @@
 				8D8A9C4E228792E00013BF3D /* AddTripView.swift */,
 				8D8A9C6A2288F3DC0013BF3D /* TripDetailsView.swift */,
 				8D8A9CA3228BA1700013BF3D /* AddWaypointView.swift */,
+				8D8A9CAF228CB3540013BF3D /* WaypointDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -202,6 +211,7 @@
 				8D8A9C50228792FD0013BF3D /* AddTripViewController.swift */,
 				8D8A9C6C2288F3F30013BF3D /* TripDetailsViewController.swift */,
 				8D8A9CA5228BA18A0013BF3D /* AddWaypointViewController.swift */,
+				8D8A9CB1228CB4230013BF3D /* WaypointDetailViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -233,6 +243,7 @@
 				8D8A9C52228794D00013BF3D /* AddTripView_Constraints.swift */,
 				8D8A9C6E2288FB6C0013BF3D /* TripDetailsView_Constraints.swift */,
 				8D8A9CA9228BAF510013BF3D /* AddWaypointView_Constraints.swift */,
+				8D8A9CB5228CB55C0013BF3D /* WaypointDetailView_Constraints.swift */,
 			);
 			path = View_Constraints;
 			sourceTree = "<group>";
@@ -244,6 +255,7 @@
 				8D8A9C542287970D0013BF3D /* AddTripVC_Constraints.swift */,
 				8D8A9C702288FCE50013BF3D /* TripDetailsVC_Constraints.swift */,
 				8D8A9CA7228BAC5B0013BF3D /* AddWaypointVC_Constraints.swift */,
+				8D8A9CB3228CB5150013BF3D /* WaypointDetailVC_Constraints.swift */,
 			);
 			path = Controller_Constraints;
 			sourceTree = "<group>";
@@ -448,10 +460,12 @@
 				8D8A9C3D2287414F0013BF3D /* PlannedTripsView_Constraints.swift in Sources */,
 				8D8A9C3822873F370013BF3D /* PlannedTripsViewController.swift in Sources */,
 				8D8A9CA4228BA1700013BF3D /* AddWaypointView.swift in Sources */,
+				8D8A9CB6228CB55C0013BF3D /* WaypointDetailView_Constraints.swift in Sources */,
 				8D8A9C6F2288FB6C0013BF3D /* TripDetailsView_Constraints.swift in Sources */,
 				8D8A9C6D2288F3F30013BF3D /* TripDetailsViewController.swift in Sources */,
 				8D8A9C3F228742F90013BF3D /* TripsTableViewCell.swift in Sources */,
 				8D8A9CAE228BE5520013BF3D /* TripDetailsVC_Extension.swift in Sources */,
+				8D8A9CB0228CB3540013BF3D /* WaypointDetailView.swift in Sources */,
 				8D8A9C41228744A40013BF3D /* PlannedTripsVC_Constraints.swift in Sources */,
 				8D8A9C4D22878EBF0013BF3D /* TripStore.swift in Sources */,
 				8D8A9C692288EABB0013BF3D /* Waypoints+CoreDataProperties.swift in Sources */,
@@ -459,7 +473,9 @@
 				8D8A9C51228792FD0013BF3D /* AddTripViewController.swift in Sources */,
 				8D8A9C53228794D00013BF3D /* AddTripView_Constraints.swift in Sources */,
 				8D2CAEFA2282AF2A008CE2E0 /* AppDelegate.swift in Sources */,
+				8D8A9CB4228CB5150013BF3D /* WaypointDetailVC_Constraints.swift in Sources */,
 				8D8A9C682288EABB0013BF3D /* Waypoints+CoreDataClass.swift in Sources */,
+				8D8A9CB2228CB4230013BF3D /* WaypointDetailViewController.swift in Sources */,
 				8D8A9CAC228BB0420013BF3D /* AddWaypointVC_Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

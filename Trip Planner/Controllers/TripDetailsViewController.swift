@@ -17,6 +17,8 @@ class TripDetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         tripDetailsView.waypointsTable.reloadData()
+        navigationController?.navigationBar.prefersLargeTitles = true
+        toggleViews()
     }
     
     override func viewDidLoad() {
@@ -33,7 +35,10 @@ class TripDetailsViewController: UIViewController {
         setupNav()
         setupView()
         tripDetailsView.tripNameLabel.text = trip.tripName
-        
+        toggleViews()
+    }
+    
+    func toggleViews() {
         if trip.waypoints!.count > 0 {
             tripDetailsView.view2.isHidden = false
             tripDetailsView.view1.isHidden = true

@@ -17,6 +17,7 @@ class PlannedTripsViewController: UIViewController {
         super.viewWillAppear(true)
         updateDataSource()
         plannedTripsView.tripsTableView.reloadData()
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override func viewDidLoad() {

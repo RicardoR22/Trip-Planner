@@ -22,20 +22,23 @@ extension TripDetailsViewController: UITableViewDelegate, UITableViewDataSource 
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            store.delete(item: self.plannedTripsView.plannedTrips[indexPath.row])
-//            self.plannedTripsView.plannedTrips.remove(at: indexPath.row)
-//            tableView.deleteRows(at: [indexPath], with: .automatic)
-//        }
-//    }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let waypoint = trip.waypoints?.object(at: indexPath.row) as! Waypoints
+            trip.removeFromWaypoints(waypoint)
+            store.saveTrip()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let tripDetailVC = TripDetailsViewController()
-//        tripDetailVC.store = store
-//        tripDetailVC.trip = self.plannedTripsView.plannedTrips[indexPath.row]
-//        
-//        navigationController?.pushViewController(tripDetailVC, animated: true)
-//        
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let waypoint = trip.waypoints?.object(at: indexPath.row) as! Waypoints
+        let waypointDetailVC = WaypointDetailViewController()
+        waypointDetailVC.store = store
+        waypointDetailVC.trip = trip
+        waypointDetailVC.waypoint = waypoint
+        
+        navigationController?.pushViewController(waypointDetailVC, animated: true)
+        
+    }
 }
