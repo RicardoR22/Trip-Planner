@@ -14,10 +14,17 @@ class TripDetailsViewController: UIViewController {
     var store: TripStore!
     var trip: Trip!
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        tripDetailsView.waypointsTable.reloadData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setup()
         // Do any additional setup after loading the view, typically from a nib.
+        tripDetailsView.waypointsTable.delegate = self
+        tripDetailsView.waypointsTable.dataSource = self
     }
     
     // MARK: View setup
@@ -25,6 +32,15 @@ class TripDetailsViewController: UIViewController {
     func setup() {
         setupNav()
         setupView()
+        tripDetailsView.tripNameLabel.text = trip.tripName
+        
+        if trip.waypoints!.count > 0 {
+            tripDetailsView.view2.isHidden = false
+            tripDetailsView.view1.isHidden = true
+        } else {
+            tripDetailsView.view2.isHidden = true
+            tripDetailsView.view1.isHidden = false
+        }
     }
     
     func setupNav() {
@@ -35,6 +51,20 @@ class TripDetailsViewController: UIViewController {
         let back = UIBarButtonItem(title: "Back", style: .done, target: self, action: #selector(backTapped))
         back.tintColor = UIColor(red: 61/255, green: 204/255, blue: 142/255, alpha: 1)
         navigationItem.leftBarButtonItem = back
+        
+        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addWaypointTapped))
+        add.tintColor = UIColor(red: 61/255, green: 204/255, blue: 142/255, alpha: 1)
+        
+        if trip!.waypoints!.count > 0 {
+            navigationItem.rightBarButtonItem = add
+        }
+    }
+    
+    @objc func addWaypointTapped() {
+        let addWaypointVC = AddWaypointViewController()
+        addWaypointVC.store = self.store
+        addWaypointVC.trip = self.trip
+        navigationController?.pushViewController(addWaypointVC, animated: true)
     }
     
     @objc func backTapped() {
@@ -46,6 +76,8 @@ class TripDetailsViewController: UIViewController {
         self.tripDetailsView = mainView
         self.view.addSubview(tripDetailsView)
         setTripDetailsViewConstraints()
+        self.tripDetailsView.getStartedBtn.addTarget(self, action: #selector(addWaypointTapped), for: .touchUpInside)
+        self.tripDetailsView.addWaypointBtn.addTarget(self, action: #selector(addWaypointTapped), for: .touchUpInside)
     }
 
 }
